@@ -1,0 +1,66 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ConnectMQ'ya giriş yapın",
+        "description": "ConnectMQ hesabınızla giriş yapın. Hesabınız yok mu? {portal_url} adresinden ücretsiz oluşturun (kredi kartı gerekmez). Google veya LinkedIn ile kaydolduysanız önce portalda \"Şifremi unuttum\" ile bir şifre belirleyin.",
+        "data": {
+          "email": "E-posta",
+          "password": "Şifre"
+        }
+      },
+      "broker": {
+        "title": "Bir broker seçin",
+        "data": {
+          "broker_id": "Broker"
+        }
+      },
+      "mqtt": {
+        "title": "Home Assistant MQTT bağlantısı",
+        "description": "Home Assistant, MQTT entegrasyonunu **{broker}** broker'ına ({host}, port {port}, TLS) broker'ın kimlik bilgileri ve ConnectMQ'nun beklediği client ID ile bağlayabilir.",
+        "data": {
+          "configure_mqtt": "MQTT entegrasyonunu bu broker ile kur"
+        }
+      },
+      "reauth_confirm": {
+        "title": "ConnectMQ'ya yeniden giriş yapın",
+        "description": "ConnectMQ oturumunuzun süresi doldu. Devam etmek için şifrenizi girin.",
+        "data": {
+          "email": "E-posta",
+          "password": "Şifre"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "E-posta veya şifre hatalı",
+      "cannot_connect": "Bağlanılamadı"
+    },
+    "abort": {
+      "already_configured": "Bu broker zaten kurulu.",
+      "cannot_connect": "Bağlanılamadı",
+      "no_brokers": "Hesabınızda henüz kurulmamış bir broker yok. {portal_url} adresinden bir broker oluşturun.",
+      "reauth_successful": "Yeniden kimlik doğrulama başarılı"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "broker_active": { "name": "Broker aktif" },
+      "node_online": { "name": "Broker düğümü" }
+    },
+    "sensor": {
+      "online_clients": { "name": "Bağlı istemciler" },
+      "account_connections": { "name": "Hesap bağlantıları" },
+      "connection_limit": { "name": "Bağlantı limiti" },
+      "remaining_connections": { "name": "Kalan bağlantı" },
+      "session_minutes_used": { "name": "Kullanılan oturum dakikası" },
+      "session_minutes_limit": { "name": "Oturum dakikası limiti" },
+      "quota_used": { "name": "Kullanılan kota" },
+      "plan": { "name": "Plan" },
+      "last_client_connected": { "name": "Son bağlanan istemci" }
+    }
+  },
+  "exceptions": {
+    "session_expired": { "message": "ConnectMQ oturumunun süresi doldu; yeniden giriş yapın." },
+    "update_failed": { "message": "ConnectMQ'ya ulaşılamadı: {error}" }
+  }
+}

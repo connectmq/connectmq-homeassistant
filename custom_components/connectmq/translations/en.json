@@ -1,0 +1,92 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to ConnectMQ",
+        "description": "Sign in with your ConnectMQ account. No account yet? Create a free one at {portal_url} (no credit card needed). If you signed up with Google or LinkedIn, set a password first with \"Forgot password\" in the portal.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "broker": {
+        "title": "Choose a broker",
+        "data": {
+          "broker_id": "Broker"
+        }
+      },
+      "mqtt": {
+        "title": "Connect Home Assistant's MQTT",
+        "description": "Home Assistant can connect its MQTT integration to **{broker}** ({host}, port {port}, TLS) with the broker's credentials and the client ID ConnectMQ expects.",
+        "data": {
+          "configure_mqtt": "Set up the MQTT integration with this broker"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to ConnectMQ again",
+        "description": "Your ConnectMQ session has expired. Enter your password to continue.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid authentication",
+      "cannot_connect": "Failed to connect"
+    },
+    "abort": {
+      "already_configured": "This broker is already set up.",
+      "cannot_connect": "Failed to connect",
+      "no_brokers": "Your account has no broker that is not set up yet. Create one at {portal_url}.",
+      "reauth_successful": "Re-authentication was successful"
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "broker_active": {
+        "name": "Broker active"
+      },
+      "node_online": {
+        "name": "Broker node"
+      }
+    },
+    "sensor": {
+      "online_clients": {
+        "name": "Connected clients"
+      },
+      "account_connections": {
+        "name": "Account connections"
+      },
+      "connection_limit": {
+        "name": "Connection limit"
+      },
+      "remaining_connections": {
+        "name": "Remaining connections"
+      },
+      "session_minutes_used": {
+        "name": "Session minutes used"
+      },
+      "session_minutes_limit": {
+        "name": "Session minutes limit"
+      },
+      "quota_used": {
+        "name": "Quota used"
+      },
+      "plan": {
+        "name": "Plan"
+      },
+      "last_client_connected": {
+        "name": "Last client connected"
+      }
+    }
+  },
+  "exceptions": {
+    "session_expired": {
+      "message": "The ConnectMQ session has expired; sign in again."
+    },
+    "update_failed": {
+      "message": "Could not reach ConnectMQ: {error}"
+    }
+  }
+}

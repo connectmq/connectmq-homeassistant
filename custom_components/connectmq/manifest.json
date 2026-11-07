@@ -1,0 +1,13 @@
+{
+  "domain": "connectmq",
+  "name": "ConnectMQ",
+  "after_dependencies": ["mqtt"],
+  "codeowners": ["@connectmq"],
+  "config_flow": true,
+  "documentation": "https://github.com/connectmq/connectmq-homeassistant",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/connectmq/connectmq-homeassistant/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
